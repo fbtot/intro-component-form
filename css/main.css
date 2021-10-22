@@ -1,12 +1,11 @@
 @charset "UTF-8";
 :root {
-  --red: hsl(0, 100%, 74%)
-  --green: hsl(154, 59%, 51%)
-  --blue: hsl(248, 32%, 49%)
-  --dark-blue: hsl(249, 10%, 26%)
-  --grayish-blue: hsl(246, 25%, 77%)
-
-  --text-color: hsl(0, 0%, 7%);
+  --red: hsl(0, 100%, 74%);
+  --green: #38cc8c;
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --text-color: white;
   --accent-color: hsl(216, 61%, 54%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
@@ -20,6 +19,7 @@
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+  --border-radius: 0.5rem;
 }
 
 * {
@@ -36,7 +36,7 @@ html {
 body {
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: #eeeeee;
+  background-color: var(--red);
   line-height: 1.6em;
 }
 
@@ -153,8 +153,46 @@ select {
   padding: 0.5rem;
 }
 
-button {
+button,
+input[type=submit] {
   cursor: pointer;
+}
+
+input {
+  border: 1px solid var(--grayish-blue);
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.box, .box--blue, .box--white {
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.box--white {
+  background: white;
+}
+
+.box--blue {
+  background: var(--blue);
+}
+
+.button--green {
+  background: var(--green);
+  border: 1px solid #30bb7f;
+  box-shadow: 0 0.3rem 0 #30bb7f;
+  color: white;
+  text-transform: uppercase;
+}
+.button--green:hover {
+  background: #61d6a3;
+  box-shadow: 0 0.3rem 0 #4dd198;
+  border-color: #4dd198;
 }
 
 /*# sourceMappingURL=main.css.map */

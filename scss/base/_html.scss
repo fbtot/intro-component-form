@@ -1,5 +1,5 @@
 @use "../index.scss" as *;
-
+@use "sass:color";
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ html {
 body {
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: rgb(238, 238, 238);
+  background-color: var(--red);
   line-height: 1.6em;
 }
 
@@ -130,6 +130,50 @@ select {
   padding: 0.5rem;
 }
 
-button {
+button,
+input[type="submit"] {
   cursor: pointer;
+}
+
+form {
+}
+
+input {
+  border: 1px solid var(--grayish-blue);
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.box {
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.box--white {
+  @extend .box;
+  background: white;
+}
+
+.box--blue {
+  @extend .box;
+  background: var(--blue);
+}
+
+.button--green {
+  background: var(--green);
+  border: 1px solid $dark-green;
+  box-shadow: 0 0.3rem 0 $dark-green;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    background: color.adjust($green, $lightness: 10%);
+    box-shadow: 0 0.3rem 0 color.adjust($dark-green, $lightness: 10%);
+    border-color: color.adjust($dark-green, $lightness: 10%);
+  }
 }

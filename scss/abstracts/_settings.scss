@@ -1,17 +1,21 @@
+@use "sass:color";
 $base-font-size: 16px;
 $small-font-size: 16px * 0.9;
 $desktop-width: 800px;
 $mobile-width: $desktop-width - 1px;
+$green: hsl(154, 59%, 51%);
+$dark-green: color.adjust($green, $lightness: -5%);
+$light-green: color.adjust($green, $lightness: -5%);
 
 :root {
   // Colors
-  --red: hsl(0, 100%, 74%) 
-  --green: hsl(154, 59%, 51%)
-  --blue: hsl(248, 32%, 49%)
-  --dark-blue: hsl(249, 10%, 26%) 
-  --grayish-blue: hsl(246, 25%, 77%)
-  
-  --text-color: hsl(0, 0%, 7%);
+  --red: hsl(0, 100%, 74%);
+  --green: #{$green};
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+
+  --text-color: white;
   --accent-color: hsl(216, 61%, 54%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
@@ -27,4 +31,6 @@ $mobile-width: $desktop-width - 1px;
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+
+  --border-radius: 0.5rem;
 }
