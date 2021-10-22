@@ -16,7 +16,7 @@ $light-green: color.adjust($green, $lightness: -5%);
   --grayish-blue: hsl(246, 25%, 77%);
 
   --text-color: white;
-  --accent-color: hsl(216, 61%, 54%);
+  --accent-color: var(--red);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
 
@@ -25,7 +25,7 @@ $light-green: color.adjust($green, $lightness: -5%);
   --small-font-size: #{$small-font-size};
   --body-font-family: "Poppins", sans-serif;
   --headings-font-family: var(--body-font-family);
-  --h1-font-size: 2.7rem;
+  --h1-font-size: 1.7rem;
   --h2-font-size: 2rem;
   --h3-font-size: 1.5rem;
   --h4-font-size: 1.3rem;
@@ -33,4 +33,10 @@ $light-green: color.adjust($green, $lightness: -5%);
   --h6-font-size: 1rem;
 
   --border-radius: 0.5rem;
+}
+
+@media screen and(min-width: $desktop-width) {
+  :root {
+    --h1-font-size: 3rem;
+  }
 }

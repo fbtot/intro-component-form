@@ -6,14 +6,14 @@
   --dark-blue: hsl(249, 10%, 26%);
   --grayish-blue: hsl(246, 25%, 77%);
   --text-color: white;
-  --accent-color: hsl(216, 61%, 54%);
+  --accent-color: var(--red);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
   --base-font-size: 16px;
   --small-font-size: 14.4px;
   --body-font-family: "Poppins", sans-serif;
   --headings-font-family: var(--body-font-family);
-  --h1-font-size: 2.7rem;
+  --h1-font-size: 1.7rem;
   --h2-font-size: 2rem;
   --h3-font-size: 1.5rem;
   --h4-font-size: 1.3rem;
@@ -22,6 +22,11 @@
   --border-radius: 0.5rem;
 }
 
+@media screen and (min-width: 800px) {
+  :root {
+    --h1-font-size: 3rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -34,10 +39,23 @@ html {
 }
 
 body {
+  /* @mixin antialias */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* end @mixin antialias */
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: var(--red);
   line-height: 1.6em;
+  background: var(--red) url(../images/bg-intro-mobile.png) 0 0;
+  background-size: contain;
+}
+@media screen and (min-width: 800px) {
+  body {
+    /* mixin mq */
+    background: var(--red) url(../images/bg-intro-desktop.png) 0 0;
+    background-size: cover;
+    /* end mixin mq */
+  }
 }
 
 /* ========================== § TYPOGRAPHY === */
@@ -91,6 +109,7 @@ h6 {
 
 a {
   color: var(--accent-color);
+  text-decoration: none;
 }
 
 dt {
@@ -158,7 +177,8 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input {
+input,
+button {
   border: 1px solid var(--grayish-blue);
   width: 100%;
   margin-bottom: 1rem;
@@ -166,12 +186,97 @@ input {
   border-radius: 0.3rem;
   font-size: 0.9rem;
   font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+@media screen and (min-width: 800px) {
+  input,
+button {
+    /* mixin mq */
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* end mixin mq */
+  }
 }
 
+input:focus {
+  outline: none;
+  border-color: var(--dark-blue);
+}
+
+.intro {
+  padding: 0 1.5rem;
+}
+@media screen and (min-width: 800px) {
+  .intro {
+    /* mixin mq */
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    width: calc(1110px + 3rem);
+    /* end mixin mq */
+  }
+}
+
+/* ========================== § TYPOGRAPHY === */
+@media screen and (max-width: 799px) {
+  .intro__text {
+    /* mixin mq */
+    text-align: center;
+    margin-bottom: 4em;
+    /* end mixin mq */
+  }
+}
+@media screen and (min-width: 800px) {
+  .intro__text {
+    /* mixin mq */
+    /* @mixin center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* end @mixin center */
+    flex-direction: column;
+    /* end mixin mq */
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .intro__title {
+    /* mixin mq */
+    margin-top: -2.2rem;
+    /* end mixin mq */
+  }
+}
+
+.small-text {
+  font-size: 70%;
+}
+
+.intro__disclaimer {
+  max-width: unset;
+  display: block;
+  width: 100%;
+  color: var(--grayish-blue);
+  text-align: center;
+}
+.intro__disclaimer a {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+  .intro__button {
+    /* mixin mq */
+    margin-bottom: 1rem;
+    /* end mixin mq */
+  }
+}
+
+/* ========================== § BOX === */
 .box, .box--blue, .box--white {
   border-radius: var(--border-radius);
   padding: 1.5rem;
   box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
 }
 
 .box--white {
@@ -180,6 +285,24 @@ input {
 
 .box--blue {
   background: var(--blue);
+}
+
+.intro__alert {
+  text-align: center;
+  font-size: 95%;
+}
+@media screen and (min-width: 800px) {
+  .intro__alert {
+    /* mixin mq */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* end mixin mq */
+  }
+}
+
+/* ========================== § BUTTON === */
+.button, .button--green {
+  letter-spacing: 0.1em;
 }
 
 .button--green {
@@ -193,6 +316,11 @@ input {
   background: #61d6a3;
   box-shadow: 0 0.3rem 0 #4dd198;
   border-color: #4dd198;
+}
+
+/* ========================== § FORM === */
+.intro__form {
+  padding: 2.4rem;
 }
 
 /*# sourceMappingURL=main.css.map */

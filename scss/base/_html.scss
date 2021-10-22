@@ -12,10 +12,17 @@ html {
 }
 
 body {
+  @include antialias;
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: var(--red);
   line-height: 1.6em;
+  background: var(--red) url(../images/bg-intro-mobile.png) 0 0;
+  background-size: contain;
+
+  @include mq($desktop-width, up) {
+    background: var(--red) url(../images/bg-intro-desktop.png) 0 0;
+    background-size: cover;
+  }
 }
 
 /* ========================== § TYPOGRAPHY === */
@@ -69,6 +76,7 @@ h6 {
 
 a {
   color: var(--accent-color);
+  text-decoration: none;
 }
 
 dt {
@@ -135,10 +143,8 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-form {
-}
-
-input {
+input,
+button {
   border: 1px solid var(--grayish-blue);
   width: 100%;
   margin-bottom: 1rem;
@@ -146,12 +152,78 @@ input {
   border-radius: 0.3rem;
   font-size: 0.9rem;
   font-weight: 500;
+  transition: 0.2s ease-in-out;
+
+  @include mq($desktop-width, up) {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
+input:focus {
+  outline: none;
+  border-color: var(--dark-blue);
+}
+
+.intro {
+  padding: 0 1.5rem;
+
+  @include mq($desktop-width, up) {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    width: calc(1110px + 3rem);
+  }
+}
+
+/* ========================== § TYPOGRAPHY === */
+.intro__text {
+  @include mq($desktop-width, down) {
+    text-align: center;
+    margin-bottom: 4em;
+  }
+
+  @include mq($desktop-width, up) {
+    @include center(flex);
+    flex-direction: column;
+  }
+}
+
+.intro__title {
+  @include mq($desktop-width, up) {
+    margin-top: -2.2rem;
+  }
+}
+
+.small-text {
+  font-size: 70%;
+}
+
+.intro__disclaimer {
+  max-width: unset;
+  display: block;
+  width: 100%;
+  color: var(--grayish-blue);
+  text-align: center;
+
+  a {
+    font-weight: bold;
+  }
+}
+
+.intro__button {
+  @include mq($desktop-width, up) {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ========================== § BOX === */
 .box {
   border-radius: var(--border-radius);
   padding: 1.5rem;
   box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
 }
 
 .box--white {
@@ -164,7 +236,21 @@ input {
   background: var(--blue);
 }
 
+.intro__alert {
+  text-align: center;
+  font-size: 95%;
+  @include mq($desktop-width, up) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* ========================== § BUTTON === */
+.button {
+  letter-spacing: 0.1em;
+}
 .button--green {
+  @extend .button;
   background: var(--green);
   border: 1px solid $dark-green;
   box-shadow: 0 0.3rem 0 $dark-green;
@@ -176,4 +262,9 @@ input {
     box-shadow: 0 0.3rem 0 color.adjust($dark-green, $lightness: 10%);
     border-color: color.adjust($dark-green, $lightness: 10%);
   }
+}
+
+/* ========================== § FORM === */
+.intro__form {
+  padding: 2.4rem;
 }
