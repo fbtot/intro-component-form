@@ -30,20 +30,20 @@
 
           <form class="intro__form box--white" action="success.html" method="get" novalidate>
             <div class="intro__input-container">
-              <input type="text" placeholder="First Name" class="intro__input" required />
-              <small aria-hidden="true" class="error-message">First Name cannot be empty</small>
+              <input type="text" placeholder="First Name" id="form__first-name" class="intro__input" required />
+              <small aria-live="polite" role="alert" class="error-message">First Name cannot be empty</small>
             </div>
             <div class="intro__input-container">
-              <input type="text" placeholder="Last Name" class="intro__input" required />
-              <small aria-hidden="true" class="error-message">Last Name cannot be empty</small>
+              <input type="text" placeholder="Last Name" id="form__last-name" class="intro__input" required />
+              <small aria-live="polite" role="alert" class="error-message">Last Name cannot be empty</small>
             </div>
             <div class="intro__input-container">
-              <input type="email" placeholder="Email Address" class="intro__input" required />
-              <small aria-hidden="true" class="error-message">Looks like this is not an email</small>
+              <input type="email" placeholder="Email Address" id="form__email" class="intro__input" required />
+              <small aria-live="polite" role="alert" class="error-message">Looks like this is not an email</small>
             </div>
             <div class="intro__input-container">
-              <input type="password" placeholder="Password" class="intro__input" required />
-              <small aria-hidden="true" class="error-message">Password cannot be empty</small>
+              <input type="password" placeholder="Password" id="form__password" class="intro__input" required minlength="6" />
+              <small aria-live="polite" role="alert" class="error-message">Password cannot be empty</small>
             </div>
             <button id="intro__button" class="button--green intro__button">Claim your free trial</button>
             <small class="intro__disclaimer">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small>
