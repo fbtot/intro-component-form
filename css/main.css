@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  --red: hsl(0, 100%, 74%);
+  --red: #ff7a7a;
   --green: #38cc8c;
   --blue: hsl(248, 32%, 49%);
   --dark-blue: hsl(249, 10%, 26%);
@@ -22,7 +22,7 @@
   --border-radius: 0.5rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   :root {
     --h1-font-size: 3rem;
   }
@@ -56,7 +56,7 @@ body {
   background: var(--red) url(../images/bg-intro-mobile.png) 0 0;
   background-size: contain;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   body {
     /* mixin mq */
     background: var(--red) url(../images/bg-intro-desktop.png) 0 0;
@@ -169,7 +169,7 @@ figcaption {
 .intro {
   padding: 0 1.5rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   .intro {
     /* mixin mq */
     display: grid;
@@ -184,7 +184,7 @@ figcaption {
 .intro__input-container {
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   .intro__input-container {
     /* mixin mq */
     margin-bottom: 1.2rem;
@@ -219,7 +219,7 @@ button {
   font-weight: 500;
   transition: border 0.2s ease-in-out, outline 0.2s ease-in-out;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   input,
 button {
     /* mixin mq */
@@ -239,7 +239,7 @@ small {
 }
 
 /* ========================== § TYPOGRAPHY === */
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 1149px) {
   .intro__text {
     /* mixin mq */
     text-align: center;
@@ -247,7 +247,7 @@ small {
     /* end mixin mq */
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   .intro__text {
     /* mixin mq */
     /* @mixin center */
@@ -260,7 +260,7 @@ small {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   .intro__title {
     /* mixin mq */
     margin-top: -2.2rem;
@@ -283,12 +283,8 @@ small {
   font-weight: bold;
 }
 
-@media screen and (min-width: 800px) {
-  .intro__button {
-    /* mixin mq */
-    margin-bottom: 1rem;
-    /* end mixin mq */
-  }
+.intro__button {
+  margin-bottom: 1rem;
 }
 
 /* ========================== § BOX === */
@@ -311,7 +307,7 @@ small {
   text-align: center;
   font-size: 95%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1150px) {
   .intro__alert {
     /* mixin mq */
     padding-top: 1rem;
@@ -367,19 +363,21 @@ input.error {
 /* ========================== § SUCCESS === */
 #success {
   text-align: center;
+  padding: 1rem;
 }
 #success a {
   color: white;
   text-decoration: underline;
 }
-
-.success-img-container img {
-  border: 2rem solid rgba(255, 255, 255, 0.4);
-  width: 100%;
+#success img {
+  max-width: 100%;
 }
 
 .success__title {
-  font-size: 4rem;
+  margin: 1rem;
+  font-size: 3rem;
+  font-size: clamp(2rem, 10vw, 6rem);
+  text-shadow: 0 0 2rem #eb0000;
 }
 
 /*# sourceMappingURL=main.css.map */

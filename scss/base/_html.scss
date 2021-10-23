@@ -226,9 +226,7 @@ small {
 }
 
 .intro__button {
-  @include mq($desktop-width, up) {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 
 /* ========================== § BOX === */
@@ -306,18 +304,24 @@ input.error {
 /* ========================== § SUCCESS === */
 #success {
   text-align: center;
+  padding: 1rem;
   a {
     color: white;
     text-decoration: underline;
   }
-}
-.success-img-container {
+
+  figure {
+  }
+
   img {
-    border: 2rem solid rgba(255, 255, 255, 0.4);
-    width: 100%;
+    max-width: 100%;
+    // transform: translateX(-0.5rem);
   }
 }
 
 .success__title {
-  font-size: 4rem;
+  margin: 1rem;
+  font-size: 3rem;
+  font-size: clamp(2rem, 10vw, 6rem);
+  text-shadow: 0 0 2rem $dark-red;
 }

@@ -1,15 +1,17 @@
 @use "sass:color";
 $base-font-size: 16px;
 $small-font-size: 16px * 0.9;
-$desktop-width: 800px;
+$desktop-width: 1150px;
 $mobile-width: $desktop-width - 1px;
 $green: hsl(154, 59%, 51%);
+$red: hsl(0, 100%, 74%);
 $dark-green: color.adjust($green, $lightness: -5%);
 $light-green: color.adjust($green, $lightness: -5%);
+$dark-red: color.adjust($red, $lightness: -28%);
 
 :root {
   // Colors
-  --red: hsl(0, 100%, 74%);
+  --red: #{$red};
   --green: #{$green};
   --blue: hsl(248, 32%, 49%);
   --dark-blue: hsl(249, 10%, 26%);
