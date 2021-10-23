@@ -49,3 +49,9 @@ randomUrl;
 if (successImg != null) {
   successImg.setAttribute("src", randomUrl);
 }
+
+// Hide password from url
+
+if (/Password=.*/.test(window.location.href)) {
+  window.location.href = window.location.href.replace(/Password=.*/, "");
+}
