@@ -281,3 +281,24 @@ small {
 .intro__form {
   padding: 2.4rem;
 }
+
+/* ========================== § ERROR STATES === */
+input.error,
+input:invalid {
+  border: 2px solid var(--red);
+  color: var(--red);
+  background: url(../images/icon-error.svg) center right 2rem no-repeat;
+  padding-right: 3.8rem;
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+  font-style: italic;
+  text-align: right;
+  width: 100%;
+}
+
+.error-message.visible {
+  display: block;
+}

@@ -28,13 +28,25 @@
             <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
           </div>
 
-          <form class="intro__form box--white">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="email" placeholder="Email Address" />
-            <input type="password" placeholder="Password" />
+          <form class="intro__form box--white" action="success.html" method="get">
+            <div class="intro__input-container">
+              <input type="text" placeholder="First Name" class="intro__input" required />
+              <small aria-hidden="true" class="error-message">First Name cannot be empty</small>
+            </div>
+            <div class="intro__input-container">
+              <input type="text" placeholder="Last Name" class="intro__input" required />
+              <small aria-hidden="true" class="error-message">Last Name cannot be empty</small>
+            </div>
+            <div class="intro__input-container">
+              <input type="email" placeholder="Email Address" class="intro__input" />
+              <small aria-hidden="true" class="error-message">Looks like this is not an email</small>
+            </div>
+            <div class="intro__input-container">
+              <input type="password" placeholder="Password" class="intro__input" />
+              <small aria-hidden="true" class="error-message">Password cannot be empty</small>
+            </div>
             <button class="button--green intro__button">Claim your free trial</button>
-            <p class="intro__disclaimer small-text">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+            <small class="intro__disclaimer">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small>
           </form>
         </div>
       </section>
