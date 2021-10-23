@@ -18,7 +18,7 @@ Users should be able to:
 
 ![Mobile screenshot](./images/screenshots/mobile.jpg)
 ![Desktop screenshot](./images/screenshots/desktop.jpg)
-![Desktop screenshot - error state](./images/screenshots/desktop-active.jpg)
+![Desktop screenshot - error state](./images/screenshots/desktop-error.jpg)
 ![Success page](./images/screenshots/success.jpg)
 
 ### Links
