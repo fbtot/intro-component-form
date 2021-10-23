@@ -302,3 +302,22 @@ input.error {
 .error-message.visible {
   display: block;
 }
+
+/* ========================== § SUCCESS === */
+#success {
+  text-align: center;
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+.success-img-container {
+  img {
+    border: 2rem solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+  }
+}
+
+.success__title {
+  font-size: 4rem;
+}
