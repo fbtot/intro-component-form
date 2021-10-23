@@ -173,7 +173,7 @@ button {
   border-radius: 0.3rem;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out, outline 0.2s ease-in-out;
 
   @include mq($desktop-width, up) {
     padding-left: 2rem;
@@ -283,9 +283,9 @@ small {
 }
 
 /* ========================== § ERROR STATES === */
-input.error,
-input:invalid {
-  border: 2px solid var(--red);
+input.error {
+  outline: 2px solid var(--red);
+  border-color: transparent;
   color: var(--red);
   background: url(../images/icon-error.svg) center right 2rem no-repeat;
   padding-right: 3.8rem;
