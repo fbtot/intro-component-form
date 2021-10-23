@@ -336,7 +336,14 @@ small {
 
 /* ========================== § FORM === */
 .intro__form {
-  padding: 2.4rem;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 1150px) {
+  .intro__form {
+    /* mixin mq */
+    padding: 2.4rem;
+    /* end mixin mq */
+  }
 }
 
 /* ========================== § ERROR STATES === */

@@ -277,7 +277,11 @@ small {
 
 /* ========================== § FORM === */
 .intro__form {
-  padding: 2.4rem;
+  padding: 1.5rem;
+
+  @include mq($desktop-width, up) {
+    padding: 2.4rem;
+  }
 }
 
 /* ========================== § ERROR STATES === */
